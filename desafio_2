@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int maca, banana, laranja, uva;
+    float total, desconto;
+    // Preço das frutas - identificacao das variáveis
+    float preco_maca = 3.00;
+    float preco_banana = 1.50;
+    float preco_laranja = 2.00;
+    float preco_uva = 4.00;
+    // Solicitar a quantidade de frutas para o usuário
+    printf("Quantas maçãs deseja comprar? ");
+    scanf("%d", &maca);
+    printf("Quantas bananas deseja comprar? ");
+    scanf("%d", &banana);
+    printf("Quantas laranjas deseja comprar? ");
+    scanf("%d", &laranja);
+    printf("Quantas uvas deseja comprar? ");
+    scanf("%d", &uva);
+    // Calcular o total de frutas e o valor total
+    int total_frutas = maca + banana + laranja + uva;
+    total = (maca * preco_maca) + (banana * preco_banana) + (laranja * preco_laranja) + (uva * preco_uva);
+    // Aplicar descontos caso tenha
+    if (total > 50.00) {
+        desconto = total * 0.10;
+        total -= desconto;
+    }
+    if (total_frutas > 20) {
+        total -= 5.00;
+    }
+    // Exibir final
+    printf("O valor total da compra é: R$ %.2f\n", total);
+    return 0;
+}
